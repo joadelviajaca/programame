@@ -1,0 +1,13 @@
+/**
+ * Import any npm dependencies in this file
+ * see commented examples below
+ */
+ // Metemos Bootstrap en su capa para que tenga menos prioridad que nuestros estilos
+ @layer librerias {
+     @import "bootstrap/scss/bootstrap";
+
+
+ }
+
+// @import "some-node-module";
+// @import "@some-company/some-node-module";

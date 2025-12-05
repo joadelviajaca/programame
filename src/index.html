@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss"><!-- do not remove this line! -->
+    <title>Programame - Fase Regional IES Jacarandá</title>
+    <!-- <link rel="icon" href="./assets/images/favicon.ico"> -->
+  </head>
+  <body class="d-flex flex-column min-vh-100">
+
+    <!-- HEADER / NAV (Bootstrap) -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top pt-4">
+            <div class="container">
+                <a class="navbar-brand fw-bold font-monospace" href="index.html">
+                    &lt;PROGRAMAME /&gt;
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Portada</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="equipos.html">Participantes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="noticia.html">Noticias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="simulador.html">Simulador</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow-1 d-flex align-items-center justify-content-center bg-dark text-light">
+        <div class="container py-5 mt-5">
+            
+            <!-- BLOQUE BEM: .poster -->
+            <!-- Este bloque usa el CSS Grid definido en _home.scss -->
+            <section class="poster">
+                
+                <!-- Elemento 1: Imagen Visual -->
+                <div class="poster__visual d-flex align-items-center justify-content-center">
+                    <!-- Icono FontAwesome simulando imagen técnica -->
+                    <i class="fa-solid fa-code fa-5x text-white opacity-50"></i>
+                </div>
+
+                <!-- Elemento 2: Título Principal -->
+                <div class="poster__title">
+                    <h1 class="display-1 text-uppercase fw-bold lh-1 mb-0">
+                        Fase<br>
+                        <span class="text-primary">Regional</span>
+                    </h1>
+                    <p class="lead font-monospace mt-3 text-info">IES Jacarandá 2025</p>
+                </div>
+
+                <!-- Elemento 3: Información -->
+                <div class="poster__info">
+                    <h2 class="h5 text-secondary text-uppercase mb-3">Detalles del Evento</h2>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fa-regular fa-calendar me-2"></i> 15 de Marzo</li>
+                        <li class="mb-2"><i class="fa-solid fa-location-dot me-2"></i> Brenes, Sevilla</li>
+                        <li class="mb-3"><i class="fa-solid fa-users me-2"></i> 20 Equipos</li>
+                    </ul>
+                    <a href="simulador.html" class="btn btn-outline-light rounded-pill w-100">
+                        Inscribirse <i class="fa-solid fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
+
+            </section>
+            <!-- Fin BLOQUE BEM -->
+
+        </div>
+    </main>
+    <include src="./views/footer.html"></include>
+    <script type="module" src="./assets/scripts/main.js"></script><!-- do not remove this line! -->
+  </body>
+</html>

@@ -1,0 +1,73 @@
+// Importamos variables si necesitamos usarlas aquí (ej. colores)
+@use "../variables" as *;
+
+@layer layouts {
+  
+  // Bloque BEM: .poster
+  .poster {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    min-height: 80vh;
+    padding: 2rem;
+
+    // Media query (Desktop First o Mobile First - aquí Mobile First)
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+    }
+
+    // Elemento BEM: .poster__visual
+    &__visual {
+      background: linear-gradient(45deg, $secondary, $primary);
+      border-radius: 1rem;
+      position: relative;
+      overflow: hidden;
+
+      // Posicionamiento en Grid Desktop
+      @media (min-width: 992px) {
+        grid-column: 1 / 8;
+        grid-row: 1 / 6;
+      }
+    }
+
+    // Elemento BEM: .poster__title
+    &__title {
+      font-family: $headings-font-family;
+      z-index: 10;
+      
+      @media (min-width: 992px) {
+        grid-column: 8 / 13;
+        grid-row: 1 / 4;
+        align-self: center;
+      }
+    }
+
+    // Elemento BEM: .poster__info
+    &__info {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+
+      @media (min-width: 992px) {
+        grid-column: 8 / 13;
+        grid-row: 4 / 6;
+      }
+    }
+  }
+}
+
+// Requisito PEC: Fallback para navegadores sin Grid
+@supports not (display: grid) {
+  .poster {
+    display: block;
+    
+    &__visual, 
+    &__title, 
+    &__info {
+      margin-bottom: 2rem;
+      width: 100%;
+    }
+  }
+}
