@@ -3,13 +3,10 @@
 @layer layouts {
   .game-section {
     padding: 3rem 0;
-
-    // Contexto de apilamiento para colores modernos
     background-color: $dark-bg;
   }
 
   // BLOQUE BEM: .debugger-tool
-  // Este es nuestro componente "autocontenido"
   .debugger-tool {
     // 1. ACTIVAR CONTAINER QUERIES
     // Definimos que este elemento es un contenedor consultable por tamaño (eje horizontal)
@@ -110,7 +107,7 @@
       }
     }
 
-    // 4. USO DE @container (La magia)
+    // 4. USO DE @container
     // Cuando el contenedor .debugger-tool sea mayor de 600px...
     @container debugger-console (min-width: 600px) {
       &__stats {

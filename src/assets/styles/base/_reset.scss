@@ -1,0 +1,14 @@
+@layer reset {
+    
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box; 
+  }
+
+  // Quitamos márgenes por defecto del navegador para evitar scrollbars inesperados
+  body {
+    margin: 0;
+    padding: 0;
+  }
+}

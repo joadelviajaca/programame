@@ -9,6 +9,14 @@
 @use "dependencies";
 
 /**
+* Base & Reset 
+*
+*/
+
+@use "base/reset";
+@use "base/base";
+
+/**
  * Import layouts
  * It's a best practice to use a different partial for each page
  */

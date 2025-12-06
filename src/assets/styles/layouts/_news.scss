@@ -32,15 +32,7 @@
 
     &__content {
       // REQUISITO PEC: Uso de :where() o :is()
-      // Usamos :where() para bajar la especificidad a 0.
-      // Esto permite que si luego añadimos una clase de utilidad (ej. .text-primary) a un <p>,
-      // esa utilidad gane sin necesidad de !important.
-      :where(p) {
-        line-height: 1.8;
-        font-size: 1.1rem;
-        color: rgba($light, 0.9);
-        margin-bottom: 1.5rem;
-      }
+      
 
       // Estilo para listas dentro del artículo
       :where(ul, ol) {
@@ -92,7 +84,6 @@
 
     // REQUISITO PEC: Uso de :has()
     // Si el bloque contiene una imagen con la clase .featured, cambiamos el estilo del contenedor padre.
-    // Esto es muy potente porque "estilamos hacia arriba" (el padre según el hijo).
     &__media-block:has(.featured) {
       border: 1px solid $secondary;
       padding: 1rem;

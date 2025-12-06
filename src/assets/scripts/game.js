@@ -1,3 +1,5 @@
+import confetti from 'canvas-confetti';
+
 const bugBtn = document.getElementById('bugBtn');
 const board = document.getElementById('gameBoard');
 const scoreDisplay = document.getElementById('scoreDisplay');
@@ -70,5 +72,11 @@ function endGame() {
     statusDisplay.textContent = 'Finalizado';
     startBtn.disabled = false;
     startBtn.textContent = 'Reiniciar Compilación';
+    confetti({
+                particleCount: 150,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+            
     alert(`¡Tiempo agotado! Has eliminado ${score} bugs.`);
 }

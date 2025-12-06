@@ -1,4 +1,3 @@
-// Importamos variables si necesitamos usarlas aquí (ej. colores)
 @use "../variables" as *;
 
 @layer layouts {
@@ -10,7 +9,6 @@
     min-height: 80vh;
     padding: 2rem;
 
-    // Media query (Desktop First o Mobile First - aquí Mobile First)
     @media (width >= 992px) {
       grid-template-columns: repeat(12, 1fr);
       grid-template-rows: repeat(6, 1fr);

@@ -5,7 +5,6 @@
  // Metemos Bootstrap en su capa para que tenga menos prioridad que nuestros estilos
  @layer librerias {
      @import "bootstrap/scss/bootstrap";
-     @import "@fortawesome/fontawesome-free/css/all.css";
 
  }
 
