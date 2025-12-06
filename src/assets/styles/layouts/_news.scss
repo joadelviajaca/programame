@@ -1,0 +1,109 @@
+@use "../variables" as *;
+@use "sass:color";
+
+@layer layouts {
+  // Bloque BEM principal
+  .news-article {
+    background-color: $card-bg;
+    border-radius: $border-radius;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgb(0 0 0 / 0.1);
+    
+    // Desktop first approach para el padding interno
+    @media (width >= 992px) {
+      padding: 4rem;
+    }
+
+    &__header {
+      margin-bottom: 3rem;
+      border-bottom: 1px solid rgba($light, 0.1);
+      padding-bottom: 2rem;
+    }
+
+    &__meta {
+      font-family: $headings-font-family;
+      color: $accent; // Verde neon
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    &__content {
+      // REQUISITO PEC: Uso de :where() o :is()
+      // Usamos :where() para bajar la especificidad a 0.
+      // Esto permite que si luego añadimos una clase de utilidad (ej. .text-primary) a un <p>,
+      // esa utilidad gane sin necesidad de !important.
+      :where(p) {
+        line-height: 1.8;
+        font-size: 1.1rem;
+        color: rgba($light, 0.9);
+        margin-bottom: 1.5rem;
+      }
+
+      // Estilo para listas dentro del artículo
+      :where(ul, ol) {
+        margin-bottom: 2rem;
+        padding-left: 1.5rem;
+        color: rgba($light, 0.9);
+        
+        li {
+          margin-bottom: 0.5rem;
+
+          &::marker {
+            color: $primary;
+          }
+        }
+      }
+
+      // Estilo para Blockquotes (citas)
+      blockquote {
+        font-size: 1.25rem;
+        font-style: italic;
+        border-left: 4px solid $primary;
+        margin: 2.5rem 0;
+        color: $info;
+        background: rgba($primary, 0.05);
+        padding: 2rem;
+        padding-left: 1.5rem;
+        border-radius: 0 $border-radius $border-radius 0;
+      }
+    }
+
+    // Bloque para imágenes o contenido destacado dentro del texto
+    &__media-block {
+      margin: 2rem 0;
+      
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: $border-radius;
+      }
+      
+      figcaption {
+        text-align: center;
+        font-size: 0.875rem;
+        color: rgba($light, 0.6);
+        margin-top: 0.5rem;
+        font-style: italic;
+      }
+    }
+
+    // REQUISITO PEC: Uso de :has()
+    // Si el bloque contiene una imagen con la clase .featured, cambiamos el estilo del contenedor padre.
+    // Esto es muy potente porque "estilamos hacia arriba" (el padre según el hijo).
+    &__media-block:has(.featured) {
+      border: 1px solid $secondary;
+      padding: 1rem;
+      border-radius: $border-radius;
+      background: rgba($secondary, 0.1);
+      
+      // Ajustamos el caption solo en este caso específico
+      figcaption {
+        color: color.adjust($secondary, $lightness: 20%);
+        font-weight: bold;
+      }
+    }
+  }
+}

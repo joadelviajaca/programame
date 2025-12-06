@@ -1,0 +1,75 @@
+@use "../variables" as *;
+@use "sass:color";
+
+@layer layouts {
+  // Bloque BEM: .teams
+  .teams {
+    padding: 3rem 0;
+
+    &__intro {
+      text-align: center;
+      margin-bottom: 3rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    // EL CONTENEDOR FLEX (Requisito: No usar .row)
+    &__grid {
+      display: flex;
+      flex-wrap: wrap; // Permite que los elementos bajen de línea
+      justify-content: center; // Centrado horizontal
+      gap: 2rem; // Espacio entre tarjetas (propiedad moderna de Flexbox)
+      margin-top: 2rem;
+    }
+
+    // LA TARJETA DEL EQUIPO (Requisito: No usar .col-*)
+    &__card {
+      // Flex-grow: 1 (crece), Flex-shrink: 1 (encoge), Flex-basis: 300px (ancho base)
+      flex: 1 1 300px; 
+      
+      // Limitamos el ancho máximo para que no se estiren demasiado en pantallas gigantes
+      max-width: 400px; 
+      background-color: $card-bg;
+      border: 1px solid color.adjust($card-bg, $lightness: 10%);
+      border-radius: $border-radius;
+      padding: 1.5rem;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+
+      // Efecto Hover
+      &:hover {
+        transform: translateY(-5px);
+        border-color: $primary;
+        box-shadow: 0 10px 20px rgb(0 0 0 / 0.2);
+      }
+    }
+
+    // Elementos internos de la tarjeta
+    &__card-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+      
+      i {
+        font-size: 1.5rem;
+        color: $secondary;
+        margin-right: 0.75rem;
+      }
+    }
+
+    &__school {
+      color: $info;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    &__members {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+  }
+}

@@ -3,6 +3,8 @@
  * see commented examples below
  */
 import * as bootstrap from 'bootstrap';
+import "@fortawesome/fontawesome-free/css/all.css";
+
 
 // import 'some-node-module';
 // import SomeModule from 'some-node-module';

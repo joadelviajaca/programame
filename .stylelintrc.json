@@ -1,0 +1,27 @@
+{
+  "extends": [
+    "stylelint-config-standard-scss",
+    "stylelint-config-recommended-scss"
+  ],
+  "plugins": [
+    "stylelint-order"
+  ],
+  "rules": {
+    "selector-class-pattern": [
+      "^[a-z]([a-z0-9-]+)?(__([a-z0-9]+-?)+)?(--([a-z0-9]+-?)+)?$",
+      {
+        "message": "Se espera un selector de clase siguiendo metodología BEM (bloque__elemento--modificador)"
+      }
+    ],
+    "no-descending-specificity": null,
+    "scss/at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": ["layer", "container", "tailwind", "apply"]
+      }
+    ],
+    "order/properties-alphabetical-order": null,
+    "color-function-notation": "modern",
+    "alpha-value-notation": "number"
+  }
+}

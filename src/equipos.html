@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss"><!-- do not remove this line! -->
+    <title>Programame - Fase Regional IES Jacarandá</title>
+    <!-- <link rel="icon" href="./assets/images/favicon.ico"> -->
+  </head>
+  <body class="d-flex flex-column min-vh-100">
+
+    <include src="./views/header.html"></include>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow-1 bg-dark text-light">
+        <section class="teams container">
+            
+            <div class="teams__intro">
+                <h1 class="display-4 fw-bold text-primary mb-3">Equipos Clasificados</h1>
+                <p class="lead text-muted">Estos son los valientes que se enfrentarán a 4 horas de código ininterrumpido.</p>
+            </div>
+
+            <!-- CONTENEDOR FLEX (Requisito PEC: No usar Grid System de Bootstrap) -->
+            <div class="teams__grid">
+
+                <!-- Equipo 1 -->
+                <article class="teams__card">
+                    <div class="teams__card-header">
+                        <i class="fa-solid fa-laptop-code"></i>
+                        <h2 class="h4 mb-0 fw-bold">Null Pointer Exception</h2>
+                    </div>
+                    <span class="teams__school">IES Polígono Sur</span>
+                    <hr class="border-secondary my-3">
+                    <div class="teams__members">
+                        <span class="badge bg-secondary">Ana</span>
+                        <span class="badge bg-secondary">Carlos</span>
+                        <span class="badge bg-secondary">Luis</span>
+                    </div>
+                </article>
+
+                <!-- Equipo 2 -->
+                <article class="teams__card">
+                    <div class="teams__card-header">
+                        <i class="fa-solid fa-terminal"></i>
+                        <h2 class="h4 mb-0 fw-bold">Sudo Make Sandwich</h2>
+                    </div>
+                    <span class="teams__school">IES Jacarandá</span>
+                    <hr class="border-secondary my-3">
+                    <div class="teams__members">
+                        <span class="badge bg-primary">Bea</span>
+                        <span class="badge bg-primary">Javi</span>
+                        <span class="badge bg-primary">Marta</span>
+                    </div>
+                </article>
+
+                <!-- Equipo 3 -->
+                <article class="teams__card">
+                    <div class="teams__card-header">
+                        <i class="fa-solid fa-bug"></i>
+                        <h2 class="h4 mb-0 fw-bold">Console.Log('Help')</h2>
+                    </div>
+                    <span class="teams__school">IES Triana</span>
+                    <hr class="border-secondary my-3">
+                    <div class="teams__members">
+                        <span class="badge bg-info text-dark">Pedro</span>
+                        <span class="badge bg-info text-dark">Sofía</span>
+                        <span class="badge bg-info text-dark">Dani</span>
+                    </div>
+                </article>
+
+                 <!-- Equipo 4 -->
+                 <article class="teams__card">
+                    <div class="teams__card-header">
+                        <i class="fa-brands fa-git-alt"></i>
+                        <h2 class="h4 mb-0 fw-bold">Git Push Force</h2>
+                    </div>
+                    <span class="teams__school">IES V. del Carmen</span>
+                    <hr class="border-secondary my-3">
+                    <div class="teams__members">
+                        <span class="badge bg-warning text-dark">Elena</span>
+                        <span class="badge bg-warning text-dark">Rocío</span>
+                        <span class="badge bg-warning text-dark">Manu</span>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+    </main>
+    <include src="./views/footer.html"></include>
+    <script type="module" src="./assets/scripts/main.js"></script><!-- do not remove this line! -->
+  </body>
+</html>

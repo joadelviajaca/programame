@@ -1,4 +1,4 @@
-//TODO: Utilizar sass color
+// TODO: Utilizar sass color
 // 1. Opciones Globales de Bootstrap
 $enable-rounded: true;
 $enable-shadows: true;
@@ -7,9 +7,12 @@ $enable-gradients: true;
 // 2. Colores Corporativos (Paleta 'Jacarandá Programame')
 $primary: #0d6efd;       // Azul eléctrico
 $secondary: #6610f2;     // Púrpura
-$accent: #00ff88;        // Verde Neon (Color custom)
+$accent: #0f8;        // Verde Neon (Color custom)
 $dark-bg: #0f172a;       // Fondo oscuro
 $card-bg: #1e293b;       // Fondo tarjetas
+$info: #0dcaf0;        // Cian (Info)
+$light: #f8f9fa; // Blanco grisáceo
+$danger: #dc3545;
 
 // Mapeamos a variables de Bootstrap
 $body-bg: $dark-bg;
@@ -18,9 +21,9 @@ $body-color: #f8f9fa;
 // 3. Tipografía
 $font-family-sans-serif: 'Inter', system-ui, -apple-system, sans-serif;
 $font-family-monospace: 'Fira Code', monospace;
-
 $headings-font-family: $font-family-monospace;
 $headings-font-weight: 700;
 
 // 4. Grid
 $grid-gutter-width: 1.5rem;
+$border-radius: 0.5rem; // 8px estándar
